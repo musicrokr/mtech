@@ -1,0 +1,12 @@
+package com.iss_mr.getting_started;
+
+import java.lang.Number;
+
+rule "StaffRoleUpdate"
+	dialect "mvel"
+	ruleflow-group "staffroleupdate"
+	when
+		varStaff : Staff( staffRole == "" || ( staffName == "Sam" && staffNumber == 65674 ))
+	then
+		varStaff.setStaffRole( "Lecturer" );
+end
